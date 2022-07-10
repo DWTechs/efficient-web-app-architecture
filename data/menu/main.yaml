@@ -1,6 +1,6 @@
 ---
 main:
-  - name: Architecture for the web
+  - name: Overview
     ref: "intro"
   - name: MVC Pattern
     ref: "mvc"
