@@ -16,8 +16,8 @@ main:
             ref: "microservices/mono-repo-vs-multi-repo/multi-repo"
           - name: "Conclusion" 
             ref: "microservices/mono-repo-vs-multi-repo/conclusion"
-  - name: Organization
-    ref: "Organization"
+      - name: Organization
+        ref: "microservices/organization"
   - name: SQL vs NoSQL
     ref: sqlnosql
   - name: MVC Pattern
