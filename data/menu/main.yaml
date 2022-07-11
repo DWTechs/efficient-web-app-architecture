@@ -2,8 +2,6 @@
 main:
   - name: Overview
     ref: "intro"
-  - name: MVC Pattern
-    ref: "mvc"
   - name: Microservices
     ref: "microservices"
     sub:
@@ -20,6 +18,8 @@ main:
             ref: "microservices/mono-repo-vs-multi-repo/conclusion"
   - name: SQL vs NoSQL
     ref: sqlnosql
+  - name: MVC Pattern
+    ref: "mvc"
   - name: Rest API
     ref: "rest/"
     sub:
