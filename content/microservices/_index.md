@@ -1,5 +1,5 @@
 ---
-title: What is the Microservices architecture
+title: Microservices
 ---
 
 Microservices architecture refers to an architectural style for developing applications where the application is developed as a collection of services that are : 
