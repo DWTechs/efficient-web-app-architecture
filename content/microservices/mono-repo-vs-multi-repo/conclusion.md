@@ -22,5 +22,7 @@ Both mono-repo and multi-repo are equally popular and the choice depends on your
 
 Mono-repo favors consistency, whereas multi-repo focuses on decoupling. 
 
-Multi repo will favor faster development and delivery on one hand but will need more care on the CI/CD side.
+Multi-repo will favor faster development and delivery on one hand but will need more care on the CI/CD side.
 So ultimately you need to decide at which project/teams size adding those devops tasks is less expensive than the benefits of faster development.
+
+Given our structure and the size of projects we usually develop, we favor multi-repo as it facilitates team autonomy and fast delivery.
