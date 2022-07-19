@@ -1,5 +1,5 @@
 ---
-title: What is Mono-repository
+title: What is a mono-repository
 ---
 
 The mono-repo approach uses a single repository to host all the code for the multiple services composing a micro-services.
