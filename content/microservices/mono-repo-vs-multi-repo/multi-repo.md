@@ -1,5 +1,5 @@
 ---
-title: What is multi-repository
+title: What is a multi-repository
 ---
 
 
