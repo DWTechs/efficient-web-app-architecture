@@ -1,5 +1,6 @@
 ---
-title: Notifications & alerts
+title: Messages
+mermaid: true
 ---
 
 Notifications, alerts, emails, snackbars, and so on can be narrowed down to the concept of message.
@@ -69,27 +70,26 @@ Depending on the amount of messages and the speed of delivery needed, it can ran
 
 # High level architecture Schema
 
-```mermaid
+
+{{<mermaid>}}
 flowchart TB
-    
     Service_1[\Service 1/] -->|Event| messageService
     Service_2[\Service 2/] -->|Alert| messageService
     Service_3[\Service 3/] -->|Event| messageService
     
     messageService(((Message Service))) <--> database[(Database)]
 
-    messageService --> email_sender[Email sender]
-    messageService --> in_app_notification_sender[In app notification sender]
-    messageService --> push_notification_sender[Push notification sender]
-    messageService --> SMS_sender[SMS sender]
+    messageService --> email_api[Email API]
+    messageService --> in_app_notification_api[In app notification API]
+    messageService --> push_notification_api[Push notification API]
+    messageService --> sms_api[SMS API]
 
-    email_sender <--> email_software{{email software}}
-    in_app_notification_sender <--> web_app{{web app}}
+    email_api <--> email_software{{email software}}
+    in_app_notification_api <--> web_app{{web app}}
 
-    push_notification_sender <--> mobile_app{{mobile app}}
-    SMS_sender <--> mobile_phone{{mobile phone}}
-
-```
+    push_notification_api <--> mobile_app{{mobile app}}
+    sms_api <--> mobile_phone{{mobile phone}}
+{{</mermaid>}}
 
 # Dealing with in app alerts & notifications
 
@@ -114,7 +114,7 @@ If a delay is acceptable and the quantity of email to send is small, a simple AP
 
 If you are dealing with big quantity of messages, the system can use a message broker to queue them into the right pile. Consumers will then send the messages asynchronously.
 
-```mermaid
+{{<mermaid>}}
 flowchart LR
     Service_1[Service 1] -->|publish| Exchange
     Service_2[Service 2] -->|publish| Exchange
@@ -125,15 +125,14 @@ flowchart LR
     Exchange --> Queue_3[[Queue 3]]
     Exchange --> Queue_4[[Queue 4]]
     end
-    Queue_1 -->|consume| email_sender[Email sender]
-    Queue_2 -->|consume| in_app_notification_sender[In app notification sender]
-    Queue_3 -->|consume| push_notification_sender[Push notification sender]
-    Queue_4 -->|consume| SMS_sender[SMS sender]
+    Queue_1 -->|consume| email_api[Email API]
+    Queue_2 -->|consume| in_app_notification_api[In app notification API]
+    Queue_3 -->|consume| push_notification_api[Push notification API]
+    Queue_4 -->|consume| sms_api[SMS API]
 
-    email_sender --> email_software{{email software}}
-    in_app_notification_sender --> web_app{{web app}}
+    email_api --> email_software{{email software}}
+    in_app_notification_api --> web_app{{web app}}
 
-    push_notification_sender --> mobile_app{{mobile app}}
-    SMS_sender --> mobile_phone{{mobile phone}}
-
-```
+    push_notification_api --> mobile_app{{mobile app}}
+    sms_api --> mobile_phone{{mobile phone}}
+{{</mermaid>}}

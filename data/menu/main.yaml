@@ -33,5 +33,7 @@ main:
         ref: "rest/operations"
       - name: "Versioning" 
         ref: "rest/versioning"
+  - name: Messages
+    ref: "message"
   
   
